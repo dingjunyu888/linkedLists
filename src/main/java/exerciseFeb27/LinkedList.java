@@ -50,6 +50,16 @@ public class LinkedList {
 		System.out.println();
 	}
 
+
+	/** Remove the node with the given element
+	 *
+	 * @param elem element
+	 */
+	public void removeElement(int elem) {
+		// FILL IN CODE: Remove the node with the given elem
+
+	}
+
 	/**
 	 * Return the element in the middle of the linked list
 	 * @return value of the middle element
@@ -58,6 +68,18 @@ public class LinkedList {
 		Node slow = head;
 		Node fast = head;
 		// FILL IN CODE: use fast and slow pointers to find the middle node
+
+		return 0;
+	}
+
+	/**
+	 * Find the value at the k-th node from the end
+	 * @param k index of the node from the end of the list
+	 * @return value of the node
+	 */
+	public int findKthFromEnd(int k) {
+		// FILL IN CODE
+		// Using two pointers, find the value in the k-th node from the end of the linked list
 
 		return 0;
 	}
@@ -73,9 +95,12 @@ public class LinkedList {
 		list2.append(13);
 
 		list2.printNodes();
-
 		int midElement = list2.findMiddleElement();
 		System.out.println(midElement);
+
+		// TODO:
+		// Call remove
+		// Call findKthFromEnd
 	}
 
 }
