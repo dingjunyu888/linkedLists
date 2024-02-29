@@ -52,17 +52,31 @@ public class LinkedList {
 
 		// FILL IN CODE
 
-		return 0; // change
+		return 0;//change this
 	}
 
 	public Iterator<Node> iterator() {
 		// FILL IN CODE: return an instance of MyIterator
-		return null;
+		return new MyIterator();
 	}
 
 	class MyIterator { // Implement Iterator interface
 
 		// FILL IN CODE to implement an iterator for the linked list
+		private Node curr = head;
+
+//		@Override
+		public boolean hasNext(Node curr){
+			return curr != null;
+		}
+
+//		@Override
+		public Node next(){
+			Node temp = curr;
+			curr = curr.next();
+			return temp;
+		}
+
 	}
 
 	public static void main(String[] args) {

@@ -57,7 +57,27 @@ public class LinkedList {
 	 */
 	public void removeElement(int elem) {
 		// FILL IN CODE: Remove the node with the given elem
+		Node curr = head;
 
+		if(head != null && head.getElem() == elem){
+			head = head.next();
+			if(head == null){
+				tail = null;
+			}
+			return;
+		}
+
+		while((curr != null) && (curr.next() != null) && (curr.next().getElem() != elem)){
+			curr = curr.next();
+		}
+		if (curr != null){
+			if(curr.next() != null){
+				curr.setNext(curr.next().next());
+				if(curr.next() == null){
+					tail = null;
+				}
+			}
+		}
 	}
 
 	/**
@@ -68,8 +88,14 @@ public class LinkedList {
 		Node slow = head;
 		Node fast = head;
 		// FILL IN CODE: use fast and slow pointers to find the middle node
-
-		return 0;
+		if(head == null){
+			throw new IllegalArgumentException();
+		}
+		while(fast != null && fast.next() != tail && fast != tail){
+			fast = fast.next().next();
+			slow = slow.next();
+		}
+		return slow.getElem();
 	}
 
 	/**
